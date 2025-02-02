@@ -1,0 +1,6 @@
+<resources>
+    <!-- Базовая тема приложения -->
+    <style name="Theme.BoardGameStatistic" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Настройте вашу тему здесь -->
+    </style>
+</resources>

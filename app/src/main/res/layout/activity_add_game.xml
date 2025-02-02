@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Поле для ввода названия игры -->
+        <EditText
+            android:id="@+id/et_game_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Название игры" />
+
+        <!-- Поле для ввода игроков -->
+        <EditText
+            android:id="@+id/et_players"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Игроки (через запятую)" />
+
+        <!-- Поле для ввода очков -->
+        <EditText
+            android:id="@+id/et_scores"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Очки (соответственно игрокам)" />
+
+        <!-- Поле для ввода даты игры -->
+        <EditText
+            android:id="@+id/et_game_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Дата игры" />
+
+        <!-- Кнопка для сохранения игры -->
+        <Button
+            android:id="@+id/btn_save_game"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Сохранить" />
+
+    </LinearLayout>
+</ScrollView>
