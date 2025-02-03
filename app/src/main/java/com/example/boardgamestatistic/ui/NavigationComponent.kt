@@ -14,19 +14,17 @@ fun NavigationComponent() {
     val navController = rememberNavController()
     val gameViewModel: GameViewModel = viewModel()
 
-    NavHost(navController = navController, startDestination = "main") {
-        composable("main") {
-            MainScreen(navController = navController, gameViewModel = gameViewModel)
+    NavHost(navController = navController, startDestination = "home") {
+        composable("home") {
+            HomePagerScreen(navController = navController, gameViewModel = gameViewModel)
         }
         composable(
             route = "detail/{gameId}",
-            arguments = listOf(navArgument("gameId") { type = NavType.IntType })  // Исправлено использование type
+            arguments = listOf(navArgument("gameId") { type = NavType.IntType })
         ) { backStackEntry ->
             val gameId = backStackEntry.arguments?.getInt("gameId")
             if (gameId != null) {
                 DetailScreen(gameId = gameId, navController = navController, gameViewModel = gameViewModel)
-            } else {
-                // Обработка случая, когда gameId == null
             }
         }
         composable("addGame") {
@@ -34,7 +32,6 @@ fun NavigationComponent() {
                 navController = navController,
                 gameViewModel = gameViewModel,
                 onGameAdded = {
-                    // Действие после добавления игры
                     navController.popBackStack()
                 }
             )

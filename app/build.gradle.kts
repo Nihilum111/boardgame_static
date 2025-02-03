@@ -92,6 +92,9 @@ dependencies {
 
     // OkHttp
     implementation("com.squareup.okhttp3:okhttp:4.11.0")
+
+    // Accompanist Pager
+    implementation("com.google.accompanist:accompanist-pager:0.30.1")
 }
 
 kapt {
