@@ -8,6 +8,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import androidx.navigation.compose.rememberNavController
 import com.example.boardgamestatistic.viewmodel.GameViewModel
+import androidx.compose.foundation.clickable
 
 @Composable
 fun NavigationComponent() {
@@ -35,6 +36,15 @@ fun NavigationComponent() {
                     navController.popBackStack()
                 }
             )
+        }
+        composable(
+            route = "boardGameDetail/{boardGameId}",
+            arguments = listOf(navArgument("boardGameId") { type = NavType.IntType })
+        ) { backStackEntry ->
+            val boardGameId = backStackEntry.arguments?.getInt("boardGameId")
+            if (boardGameId != null) {
+                BoardGameDetailScreen(navController = navController, gameId = boardGameId)
+            }
         }
     }
 }
